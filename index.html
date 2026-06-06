@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Franklin Ramirez Almanzar — Data Analyst & BI Professional</title>
+  <meta name="description" content="Google-certified Data Analyst and Engineer with 7+ years of experience building scalable data solutions."/>
+  <meta property="og:title" content="Franklin Ramirez Almanzar — Data Analyst & BI Professional"/>
+  <meta property="og:description" content="Google-certified. 7+ years. Python, SQL, Power BI, BigQuery, Oracle."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0b0e14;
+      --bg2:#12161f;
+      --bg3:#1a1f2b;
+      --border:rgba(255,255,255,0.08);
+      --border2:rgba(255,255,255,0.15);
+      --text:#f0f4f8;
+      --text2:#9ba3af;
+      --text3:#64748b;
+      --accent:#00d2ff;
+      --accent2:#5ce1ff;
+      --accent-dim:rgba(0, 210, 255, 0.12);
+      --accent-glow:rgba(0, 210, 255, 0.25);
+      --secondary:#8b5cf6;
+      --nav-w:64px;
+      --serif:'Bebas Neue',Impact,sans-serif;
+      --sans:'Outfit',system-ui,sans-serif;
+    }
+    html{scroll-padding-top:0}
+    body{
+      font-family:var(--sans);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* ── SIDE NAV ── */
+    .sidenav{
+      position:fixed;
+      right:0;top:0;bottom:0;
+      width:var(--nav-w);
+      background:var(--bg2);
+      border-left:1px solid var(--border);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.5rem 0;
+      z-index:200;
+    }
+    .sidenav-top,.sidenav-bottom{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .nav-icon{
+      width:40px;height:40px;
+      display:flex;align-items:center;justify-content:center;
+      border-radius:8px;
+      color:var(--text3);
+      text-decoration:none;
+      transition:all 0.2s;
+      font-size:18px;
+      cursor:pointer;
+      background:transparent;
+      border:none;
+    }
+    .nav-icon:hover,.nav-icon.active{background:var(--accent-dim);color:var(--accent)}
+    .nav-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+    /* ── MAIN CONTENT ── */
+    .main{margin-right:var(--nav-w)}
+
+    /* ── SECTIONS ── */
+    section{min-height:100vh;display:flex;align-items:center;padding:0 5vw;position:relative;overflow:hidden}
+    section:not(#hero){padding-top:5rem;padding-bottom:5rem;min-height:auto}
+    .section-inner{width:100%;max-width:1100px;margin:0 auto}
+
+    /* ── HERO ── */
+    #hero{padding:0;min-height:100vh}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      min-height:100vh;
+      width:100%;
+    }
+    .hero-left{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:4rem 4rem 4rem 6vw;
+      position:relative;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--text2);margin-bottom:1.5rem;
+      opacity:0;animation:fadeUp 0.5s 0.1s forwards;
+    }
+    .live-dot{
+      width:8px;height:8px;border-radius:50%;background:var(--accent);
+      animation:livepulse 2s infinite;
+      flex-shrink:0;
+    }
+    @keyframes livepulse{
+      0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}
+      50%{box-shadow:0 0 0 8px transparent}
+    }
+    .hero-name{
+      font-family:var(--serif);
+      font-size:clamp(50px,7vw,100px);
+      line-height:0.92;
+      letter-spacing:0.01em;
+      color:var(--text);
+      margin-bottom:0.4rem;
+      opacity:0;animation:fadeUp 0.5s 0.2s forwards;
+    }
+    .hero-name span{color:var(--accent)}
+    .hero-role{
+      font-family:var(--serif);
+      font-size:clamp(28px,3.5vw,46px);
+      line-height:1.1;
+      letter-spacing:0.02em;
+      color:var(--text2);
+      margin-bottom:2rem;
+      opacity:0;animation:fadeUp 0.5s 0.3s forwards;
+    }
+    .hero-tags{
+      display:flex;flex-wrap:wrap;gap:8px;
+      margin-bottom:2rem;
+      opacity:0;animation:fadeUp 0.5s 0.35s forwards;
+    }
+    .tag{
+      font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+      padding:5px 12px;border-radius:4px;
+      background:var(--accent-dim);color:var(--accent);
+      border:1px solid rgba(0, 210, 255, 0.2);
+      font-weight:500;
+    }
+    .hero-bio{
+      font-size:15px;color:var(--text2);line-height:1.75;
+      max-width:560px;margin-bottom:3rem;
+      font-weight:300;
+      opacity:0;animation:fadeUp 0.5s 0.4s forwards;
+    }
+    .hero-bio strong{color:var(--text);font-weight:500}
+    .hero-cta{
+      display:flex;gap:14px;flex-wrap:wrap;
+      opacity:0;animation:fadeUp 0.5s 0.5s forwards;
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:0.85rem 2rem;border-radius:6px;
+      font-size:13px;font-weight:600;
+      letter-spacing:0.06em;text-transform:uppercase;
+      text-decoration:none;cursor:pointer;
+      transition:all 0.2s;font-family:var(--sans);
+    }
+    .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .btn-accent{background:var(--accent);color:#041a24;border:none}
+    .btn-accent:hover{background:var(--accent2);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+    .hero-stats{
+      display:flex;gap:3rem;
+      margin-top:3.5rem;
+      padding-top:2.5rem;
+      border-top:1px solid var(--border);
+      opacity:0;animation:fadeUp 0.5s 0.6s forwards;
+    }
+    .stat-val{
+      font-family:var(--serif);
+      font-size:52px;color:var(--accent);line-height:1;
+    }
+    .stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+
+    /* ── SEPARATOR ── */
+    .sep{height:1px;background:var(--border);margin:0 6vw;}
+
+    /* ── SECTION LABELS ── */
+    .sec-label{
+      display:inline-flex;align-items:center;gap:12px;
+      font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:1rem;font-weight:600;
+    }
+    .sec-label::before{content:'//';opacity:0.5}
+    .sec-heading{
+      font-family:var(--serif);
+      font-size:clamp(48px,6vw,80px);
+      line-height:0.95;
+      color:var(--text);
+      margin-bottom:3.5rem;
+      letter-spacing:0.02em;
+    }
+    .sec-heading span{color:var(--accent)}
+
+    /* ── EXPERIENCE ── */
+    #experience{background:var(--bg)}
+    .exp-list{display:flex;flex-direction:column;gap:0}
+    .exp-item{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:2.5rem;
+      padding:2.5rem 0;
+      border-bottom:1px solid var(--border);
+    }
+    .exp-item:first-child{border-top:1px solid var(--border)}
+    .exp-date{font-size:12px;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase;line-height:1.4;margin-bottom:8px;}
+    .exp-badge{display:inline-block;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:4px;font-weight:600;}
+    .badge-accent{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(0, 210, 255, 0.2)}
+    .badge-secondary{background:rgba(139, 92, 246, 0.12);color:var(--secondary);border:1px solid rgba(139, 92, 246, 0.2)}
+    .badge-gray{background:rgba(255,255,255,0.04);color:var(--text3);border:1px solid var(--border)}
+    .exp-role{font-family:var(--serif);font-size:32px;letter-spacing:0.02em;color:var(--text);line-height:1;margin-bottom:4px;}
+    .exp-company{font-size:14px;color:var(--accent);font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+    .exp-desc-list{list-style-type:none;margin-bottom:1.25rem;}
+    .exp-desc-list li{font-size:14px;color:var(--text2);line-height:1.75;font-weight:300;margin-bottom:0.5rem;position:relative;padding-left:15px;}
+    .exp-desc-list li::before{content:"•";color:var(--accent);position:absolute;left:0;top:0;}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{font-size:11px;padding:3px 10px;border-radius:4px;background:var(--bg3);color:var(--text3);border:1px solid var(--border);letter-spacing:0.03em;}
+
+    /* ── SKILLS ── */
+    #skills{background:var(--bg2)}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+    .skill-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color 0.2s,transform 0.2s;}
+    .skill-card:hover{border-color:rgba(0, 210, 255, 0.3);transform:translateY(-3px)}
+    .skill-cat{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+    .skill-cat::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:2px;}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+    .skill-tag{font-size:12px;padding:4px 10px;background:var(--bg2);color:var(--text2);border:1px solid var(--border);border-radius:4px;}
+
+    /* ── CERTIFICATIONS ── */
+    #certifications{background:var(--bg)}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;}
+    .cert{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.2s,transform 0.2s;}
+    .cert:hover{border-color:var(--accent);transform:translateX(4px)}
+    .cert-ico{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--bg3);}
+    .cert-body{flex:1;min-width:0}
+    .cert-name{font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .cert-meta{font-size:11px;color:var(--text3);margin-top:3px;letter-spacing:0.04em}
+    .cert-arr{color:var(--text3);font-size:16px;transition:color 0.2s}
+    .cert:hover .cert-arr{color:var(--accent)}
+
+    /* ── EDUCATION ── */
+    #education{background:var(--bg2)}
+    .edu-card{display:flex;align-items:flex-start;gap:2rem;padding:2.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;border-left:3px solid var(--accent);}
+    .edu-icon{font-size:48px;line-height:1;flex-shrink:0;}
+    .edu-school{font-family:var(--serif);font-size:36px;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:0.02em;}
+    .edu-degree{font-size:15px;color:var(--accent);font-weight:500;margin-bottom:4px}
+    .edu-years{font-size:13px;color:var(--text3);letter-spacing:0.06em}
+    .edu-langs{display:flex;gap:12px;margin-top:1rem;flex-wrap:wrap;}
+    .lang-pill{font-size:12px;padding:4px 14px;border-radius:20px;font-weight:500;background:var(--accent-dim);color:var(--accent);border:1px solid rgba(0, 210, 255, 0.2);letter-spacing:0.04em;}
+
+    /* ── CONTACT ── */
+    #contact{background:var(--bg);min-height:60vh}
+    .contact-inner{text-align:center;padding:5rem 2rem;}
+    .contact-heading{font-family:var(--serif);font-size:clamp(60px,8vw,110px);line-height:0.9;color:var(--text);margin-bottom:1.5rem;letter-spacing:0.02em;}
+    .contact-heading span{color:var(--accent)}
+    .contact-sub{font-size:16px;color:var(--text2);max-width:480px;margin:0 auto 3rem;font-weight:300;line-height:1.7;}
+    .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .contact-email{font-size:18px;color:var(--text2);margin-bottom:2rem;letter-spacing:0.04em;}
+    .contact-email a{color:var(--accent);text-decoration:none}
+    .contact-email a:hover{text-decoration:underline}
+
+    /* ── FOOTER ── */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.5rem 6vw;font-size:12px;color:var(--text3);display:flex;justify-content:space-between;align-items:center;margin-right:var(--nav-w);}
+
+    /* ── LANGUAGE MODAL ── */
+    #lang-modal{
+      display:none;
+      position:fixed;inset:0;
+      background:rgba(0,0,0,0.75);
+      z-index:999;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
+    #lang-modal.open{display:flex}
+    .lang-modal-box{
+      background:var(--bg2);
+      border:1px solid rgba(0,210,255,0.25);
+      border-radius:16px;
+      padding:2.5rem 2rem;
+      text-align:center;
+      max-width:360px;
+      width:90%;
+      box-shadow:0 0 60px rgba(0,210,255,0.08);
+      animation:modalIn 0.2s ease;
+    }
+    @keyframes modalIn{
+      from{opacity:0;transform:scale(0.95) translateY(10px)}
+      to{opacity:1;transform:scale(1) translateY(0)}
+    }
+    .lang-modal-title{
+      font-family:var(--serif);
+      font-size:36px;
+      color:var(--text);
+      letter-spacing:0.04em;
+      margin-bottom:0.4rem;
+    }
+    .lang-modal-sub{
+      font-size:13px;
+      color:var(--text3);
+      margin-bottom:2rem;
+      letter-spacing:0.04em;
+    }
+    .lang-btns{display:flex;gap:12px;justify-content:center;}
+    .lang-btn{
+      flex:1;
+      padding:1rem 0.75rem;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      transition:all 0.2s;
+      display:flex;flex-direction:column;align-items:center;gap:6px;
+    }
+    .lang-btn-flag{font-size:26px;line-height:1;}
+    .lang-btn-en{background:var(--accent);color:#041a24;}
+    .lang-btn-en:hover{background:var(--accent2);transform:translateY(-2px)}
+    .lang-btn-es{background:transparent;color:var(--accent);border:1px solid rgba(0,210,255,0.35);}
+    .lang-btn-es:hover{background:var(--accent-dim);transform:translateY(-2px)}
+    .lang-cancel{
+      margin-top:1.25rem;
+      background:none;border:none;
+      color:var(--text3);font-size:12px;
+      cursor:pointer;letter-spacing:0.06em;
+      text-transform:uppercase;
+      font-family:var(--sans);
+      transition:color 0.2s;
+    }
+    .lang-cancel:hover{color:var(--text2)}
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+
+    /* ── MOBILE ── */
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;grid-template-rows:auto 50vw}
+      .hero-left{padding:6rem 1.5rem 3rem}
+      .sidenav{position:fixed;bottom:0;left:0;right:0;top:auto;width:100%;height:56px;flex-direction:row;border-left:none;border-top:1px solid var(--border);padding:0 1.5rem;}
+      .sidenav-top,.sidenav-bottom{flex-direction:row;gap:4px}
+      .main{margin-right:0;margin-bottom:56px}
+      .exp-item{grid-template-columns:1fr;gap:0.75rem}
+      .exp-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+      footer{flex-direction:column;gap:8px;text-align:center;margin-right:0}
+      section:not(#hero){padding:4rem 1.5rem}
+      .lang-btns{gap:10px}
+    }
+    @media(max-width:560px){
+      .hero-stats{gap:1.5rem}
+      .stat-val{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── SIDE NAV ── -->
+<nav class="sidenav" aria-label="Site navigation">
+  <div class="sidenav-top">
+    <a href="#hero" class="nav-icon active" title="Home">
+      <svg viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/><path d="M3 12v9h18v-9"/></svg>
+    </a>
+    <a href="#experience" class="nav-icon" title="Experience">
+      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg>
+    </a>
+    <a href="#skills" class="nav-icon" title="Skills">
+      <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    </a>
+    <a href="#certifications" class="nav-icon" title="Certifications">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+    </a>
+    <a href="#contact" class="nav-icon" title="Contact">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
+  </div>
+  <div class="sidenav-bottom">
+    <a href="#" onclick="openLangModal(event)" class="nav-icon" title="Download CV">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/franklin-ramirez-almanzar-725423127/" target="_blank" rel="noopener" class="nav-icon" title="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/Franklinyura" target="_blank" rel="noopener" class="nav-icon" title="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-name">Franklin<br><span>Ramirez Almanzar</span></h1>
+        <p class="hero-role">Data Analyst &amp; BI Professional</p>
+        <div class="hero-tags">
+          <span class="tag">Process Automation</span>
+          <span class="tag">ETL Design</span>
+          <span class="tag">Python &amp; Oracle PL/SQL</span>
+          <span class="tag">Data Engineering</span>
+          <span class="tag">Google Certified</span>
+        </div>
+<p class="hero-bio">
+  Computer Science Engineer &amp; Google-Certified Data Analytics professional with <strong>7+ years</strong> of  dedicated experience architecting scalable data pipelines and automating critical workflows across <strong>finance, healthcare, telecom, consumer goods, and e-commerce</strong>. 
+  Specialized in transforming high-volume, complex datasets into high-performance infrastructure and production-ready automation using Python (Pandas, NumPy, Plotly) and Oracle PL/SQL. 
+  Expert in driving regulatory compliance, algorithmic data quality, and strategic business intelligence across multi-cloud environments (SQL Server, BigQuery, Pentaho, Power BI, DOMO).
+</p>
+        <div class="hero-cta">
+          <a href="https://www.linkedin.com/in/franklin-ramirez-almanzar-725423127/" target="_blank" rel="noopener" class="btn btn-accent">↗ LinkedIn</a>
+          <a href="https://github.com/Franklinyura" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="#" onclick="openLangModal(event)" class="btn btn-outline">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-val">7+</div><div class="stat-lbl">Years exp.</div></div>
+          <div class="stat"><div class="stat-val">5</div><div class="stat-lbl">Companies</div></div>
+          <div class="stat"><div class="stat-val">14</div><div class="stat-lbl">Certifications</div></div>
+          <div class="stat"><div class="stat-val">5+</div><div class="stat-lbl">Industries</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="sec-label">Experience</div>
+      <h2 class="sec-heading">Where I've<br><span>Worked</span></h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Feb 2025<br>Present</div>
+            <span class="exp-badge badge-accent">Current</span>
+            <span class="exp-badge badge-secondary" style="margin-top:6px">Hybrid</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Data Analyst</div>
+            <div class="exp-company">Superintendence of Banks of the Dominican Republic</div>
+            <ul class="exp-desc-list">
+              <li>Design and implement end-to-end process automation solutions using Python, leveraging multiple libraries and integrations with external APIs to streamline data workflows and operational tasks.</li>
+              <li>Develop and optimize data processing pipelines using SQL and PL/SQL, managing large-scale datasets through stored procedures, packages, and advanced query tuning for high-performance execution.</li>
+              <li>Lead ETL processes (Extract, Transform, Load), including data ingestion, transformation, validation, and loading into optimized data structures, ensuring scalability and efficiency in data handling.</li>
+              <li>Perform data quality analysis and anomaly detection across databases, identifying inconsistencies and ensuring reliability prior to reporting and downstream consumption.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Oracle Database</span><span class="chip">PL/SQL</span><span class="chip">Python</span><span class="chip">Data Analysis</span><span class="chip">Data Maintenance</span><span class="chip">Microsoft Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Oct 2024<br>Feb 2025</div>
+            <span class="exp-badge badge-gray">On-site</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Data Engineer</div>
+            <div class="exp-company">Claro Dominicana</div>
+            <ul class="exp-desc-list">
+              <li>Monitored data loading processes to ensure the correct and effective population of datasets supporting a robust and complex reports-based operation.</li>
+              <li>Developed business intelligence solutions by designing ETL processes using tools such as Transact-SQL, PL/SQL, and Pentaho Data Integration.</li>
+              <li>Created reports and predictive models to monitor and manage key area metrics, supporting operations and strategic decision-making across various management teams.</li>
+              <li>Designed and monitored forecasts of organizational KPIs and critical indicators, leveraging historical data and improvement plans proposed by managerial teams.</li>
+              <li>Created and maintained a metadata library documenting all datasets, reports, and intelligence developed for the organization and their use.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Oracle Database</span><span class="chip">Pentaho</span><span class="chip">T-SQL</span><span class="chip">PL/SQL</span><span class="chip">Microsoft Power BI</span><span class="chip">Data Maintenance</span><span class="chip">Microsoft Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Sep 2023<br>Sep 2024</div>
+            <span class="exp-badge badge-secondary">Hybrid</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Business Intelligence Analyst</div>
+            <div class="exp-company">Colgate-Palmolive</div>
+            <ul class="exp-desc-list">
+              <li>Supported the implementation of the Analytics Plan by participating in the ETL process, building the data lake, and automating/visualizing data using global IT tools like BigQuery and DOMO.</li>
+              <li>Built new visualizations and analytics tailored to Colgate's needs to support the decision-making process and strategic growth scenarios.</li>
+              <li>Participated in the execution of category pricing decks and key performance indicators.</li>
+              <li>Supported major business review presentations by analyzing consumption behaviors and correlations with category performance, as well as conducting data extractions and validations to identify opportunities for optimizing marketing investments.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Google BigQuery</span><span class="chip">Domo</span><span class="chip">SQL</span><span class="chip">Google Sheets</span><span class="chip">Microsoft Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Oct 2022<br>Aug 2023</div>
+            <span class="exp-badge badge-gray">Remote</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Data Analyst</div>
+            <div class="exp-company">Incubeta</div>
+            <ul class="exp-desc-list">
+              <li>Built product feeds by optimizing, matching, modifying, sorting, and filtering large volumes of product data to create usable product listings.</li>
+              <li>Established parent/child variations and configured single products/SKUs to share identifiers with parent SKUs.</li>
+              <li>Set up feed exports to CSEs, including Google Shopping, Facebook, Bing Shopping, and marketplaces such as Amazon and eBay.</li>
+              <li>Manipulated data by implementing SQL queries for sorting, extraction, and optimization.</li>
+              <li>Worked within Feedonomics platforms, Excel spreadsheets, project management systems, time-tracking software, and Google Suite.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Feedonomics</span><span class="chip">SQL</span><span class="chip">Google Sheets</span><span class="chip">Microsoft Excel</span><span class="chip">Google Suite</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">May 2019<br>Sep 2022</div>
+            <span class="exp-badge badge-gray">On-site</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Data Analyst</div>
+            <div class="exp-company">MAPFRE Salud ARS</div>
+            <ul class="exp-desc-list">
+              <li>Analyzed medical claims data to identify trends in service utilization and predicted future healthcare costs, supporting strategic decision-making.</li>
+              <li>Developed detailed reports and dashboards to evaluate the financial impact of tariff adjustments between the insurer and healthcare providers.</li>
+              <li>Collaborated with actuarial and medical teams to optimize cost-control strategies while maintaining service quality.</li>
+              <li>Monitored and assessed healthcare service usage patterns to improve operational efficiency and detect potential anomalies.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Microsoft SQL Server</span><span class="chip">Microsoft Power BI</span><span class="chip">DAX</span><span class="chip">Analytical Skills</span><span class="chip">Microsoft Excel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="sec-label">Skills &amp; Technologies</div>
+      <h2 class="sec-heading">My<br><span>Toolkit</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-cat">Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">PL/SQL</span><span class="skill-tag">T-SQL</span><span class="skill-tag">DAX</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Databases</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Oracle DB</span><span class="skill-tag">SQL Server</span><span class="skill-tag">BigQuery</span><span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">BI &amp; Visualization</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span><span class="skill-tag">DOMO</span><span class="skill-tag">Looker Studio</span><span class="skill-tag">Tableau</span><span class="skill-tag">Cognos</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">ETL &amp; Pipelines</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Pentaho PDI</span><span class="skill-tag">Power Query</span><span class="skill-tag">Feedonomics</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Python Libraries</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Plotly</span><span class="skill-tag">API clients</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Spreadsheets</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Excel Advanced</span><span class="skill-tag">Google Sheets</span><span class="skill-tag">Pivot Tables</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-inner">
+      <div class="sec-label">Licenses &amp; Certifications</div>
+      <h2 class="sec-heading">Verified<br><span>Credentials</span></h2>
+      <div class="cert-grid">
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/professional-cert/Q4TLHSQXU2RN" target="_blank" rel="noopener">
+          <div class="cert-ico">🏅</div>
+          <div class="cert-body"><div class="cert-name">Google Advanced Data Analytics</div><div class="cert-meta">Coursera · Mar 2024</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/specialization/FC2MVA9UP8V8" target="_blank" rel="noopener">
+          <div class="cert-ico">🏅</div>
+          <div class="cert-body"><div class="cert-name">Google Business Intelligence Specialization</div><div class="cert-meta">Google / Coursera · Oct 2023</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-5c16018d-936c-47bb-a4ca-7c16c0a79db0/" target="_blank" rel="noopener">
+          <div class="cert-ico">📘</div>
+          <div class="cert-body"><div class="cert-name">Data Analysis with Pandas and Python</div><div class="cert-meta">Udemy · Aug 2023</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-1b165617-4231-422d-a8fe-2918a36faa41/" target="_blank" rel="noopener">
+          <div class="cert-ico">📊</div>
+          <div class="cert-body"><div class="cert-name">Tableau 2022 A-Z: Hands-On Data Science</div><div class="cert-meta">Udemy · Jul 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/certificate/LYTQFDNBWQ8K" target="_blank" rel="noopener">
+          <div class="cert-ico">🟢</div>
+          <div class="cert-body"><div class="cert-name">Data Visualization with Excel and Cognos</div><div class="cert-meta">Coursera · May 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-3c894916-2ed9-40ae-987f-01985f6e4bb3/" target="_blank" rel="noopener">
+          <div class="cert-ico">📋</div>
+          <div class="cert-body"><div class="cert-name">Excel: Business Intelligence w/ Power Query &amp; DAX</div><div class="cert-meta">Udemy · Jun 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-4f748cc5-25c4-4896-9045-54c98763e675/" target="_blank" rel="noopener">
+          <div class="cert-ico">🗄</div>
+          <div class="cert-body"><div class="cert-name">MySQL Bootcamp: SQL Beginner to Expert</div><div class="cert-meta">Udemy · May 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-a619e0bb-fba3-4bbd-80f8-6b66f74ab054/" target="_blank" rel="noopener">
+          <div class="cert-ico">🐍</div>
+          <div class="cert-body"><div class="cert-name">Python 3 Master Course: Learn from Scratch</div><div class="cert-meta">Udemy · Jan 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/certificate/CTDHUHWVU49Z" target="_blank" rel="noopener">
+          <div class="cert-ico">📗</div>
+          <div class="cert-body"><div class="cert-name">Excel Basics for Data Analysis</div><div class="cert-meta">Coursera · May 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/certificate/9SRGQPZQA4KN" target="_blank" rel="noopener">
+          <div class="cert-ico">📈</div>
+          <div class="cert-body"><div class="cert-name">Data Analytics Essentials</div><div class="cert-meta">Coursera · Apr 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://www.udemy.com/certificate/UC-08e0a53f-8505-41de-bf64-9fa32a46df5d/" target="_blank" rel="noopener">
+          <div class="cert-ico">📉</div>
+          <div class="cert-body"><div class="cert-name">Excel: Data Analysis with Pivot Tables</div><div class="cert-meta">Udemy · May 2021</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <a class="cert" href="https://skillshop.exceedlms.com/student/award/9tditnJnSCP4tixT1GWkejat" target="_blank" rel="noopener">
+          <div class="cert-ico">🎯</div>
+          <div class="cert-body"><div class="cert-name">Google Analytics Individual Qualification</div><div class="cert-meta">Google · Oct 2022</div></div>
+          <span class="cert-arr">→</span>
+        </a>
+        <div class="cert" style="cursor:default;opacity:0.6">
+          <div class="cert-ico">📍</div>
+          <div class="cert-body"><div class="cert-name">Introduction to Data Studio</div><div class="cert-meta">Google · Jun 2022</div></div>
+        </div>
+        <div class="cert" style="cursor:default;opacity:0.6">
+          <div class="cert-ico">💬</div>
+          <div class="cert-body"><div class="cert-name">Communicating Data Insights</div><div class="cert-meta">DataCamp · Jul 2024</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-inner">
+      <div class="sec-label">Education</div>
+      <h2 class="sec-heading">Academic<br><span>Background</span></h2>
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-school">Universidad Dominicana O&amp;M</div>
+          <div class="edu-degree">Bachelor's Degree · Computer Engineering</div>
+          <div class="edu-years">2011 – 2015 · Santo Domingo, Dominican Republic</div>
+          <div class="edu-langs">
+            <span class="lang-pill">Spanish — Native</span>
+            <span class="lang-pill">English — Professional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-inner">
+        <h2 class="contact-heading">Let's<br><span>Talk.</span></h2>
+        <p class="contact-sub">Open to new opportunities in data analytics, data engineering, and business intelligence. Let's build something together.</p>
+        <p class="contact-email">
+          <a href="mailto:franklinradj@gmail.com">franklinradj@gmail.com</a>
+        </p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/franklin-ramirez-almanzar-725423127/" target="_blank" rel="noopener" class="btn btn-accent">↗ LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Franklin Ramirez Almanzar</span>
+    <span>Data Analyst &amp; BI Professional · Santo Domingo, DR</span>
+  </footer>
+
+</div><!-- /main -->
+
+<!-- ── LANGUAGE MODAL ── -->
+<div id="lang-modal" role="dialog" aria-modal="true" aria-label="Select CV language">
+  <div class="lang-modal-box">
+    <div class="lang-modal-title">Download CV</div>
+    <div class="lang-modal-sub">Select your preferred language</div>
+    <div class="lang-btns">
+      <a href="ENGV - Resume Franklin Ramirez Almanzar.pdf"
+         target="_blank" rel="noopener"
+         class="lang-btn lang-btn-en"
+         onclick="closeLangModal()">
+        <span class="lang-btn-flag">🇺🇸</span>
+        English
+      </a>
+      <a href="SPAV - Resume Franklin Ramirez Almanzar.pdf"
+         target="_blank" rel="noopener"
+         class="lang-btn lang-btn-es"
+         onclick="closeLangModal()">
+        <span class="lang-btn-flag">🇩🇴</span>
+        Español
+      </a>
+    </div>
+    <button class="lang-cancel" onclick="closeLangModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  // ── SCROLL TO TOP ──
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  window.scrollTo(0, 0);
+  document.addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 100);
+    setTimeout(() => window.scrollTo(0, 0), 300);
+  });
+
+  // ── NAV HIGHLIGHT ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-icon[href^="#"]');
+  const onScroll = () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) cur = s.id });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── LANGUAGE MODAL ──
+  const modal = document.getElementById('lang-modal');
+
+  function openLangModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLangModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeLangModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLangModal();
+  });
+</script>
+</body>
+</html>
