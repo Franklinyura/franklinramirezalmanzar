@@ -131,7 +131,7 @@
       margin-bottom:2rem;
       opacity:0;animation:fadeUp 0.5s 0.35s forwards;
     }
-    .tag{
+    .hero-tags .tag{
       font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
       padding:5px 12px;border-radius:4px;
       background:var(--accent-dim);color:var(--accent);
@@ -366,7 +366,6 @@
 </head>
 <body>
 
-<!-- ── SIDE NAV ── -->
 <nav class="sidenav" aria-label="Site navigation">
   <div class="sidenav-top">
     <a href="#hero" class="nav-icon active" title="Home">
@@ -389,6 +388,9 @@
     <a href="#" onclick="openLangModal(event)" class="nav-icon" title="Download CV">
       <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     </a>
+    <a href="https://platform.stratascratch.com/user/Franklinyura" target="_blank" rel="noopener" class="nav-icon" title="StrataScratch - SQL Problems">
+      <svg viewBox="0 0 40 40" style="fill:currentColor; stroke:none;"><path d="M25.4,26.5c-2.3,1.9-5.4,3.1-8.8,3.1c-6,0-11-4.2-12.2-9.8c2.1,1.1,4.5,1.7,7,1.7c4.6,0,8.7-2.1,11.5-5.5 c2.3-1.9,5.4-3.1,8.8-3.1c6,0,11,4.2,12.2,9.8c-2.1-1.1-4.5-1.7-7-1.7C32.3,21,28.2,23.1,25.4,26.5z"/></svg>
+    </a>
     <a href="https://www.linkedin.com/in/franklin-ramirez-almanzar-725423127/" target="_blank" rel="noopener" class="nav-icon" title="LinkedIn">
       <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
     </a>
@@ -398,10 +400,8 @@
   </div>
 </nav>
 
-<!-- ── MAIN ── -->
 <div class="main">
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-grid">
       <div class="hero-left">
@@ -415,7 +415,7 @@
           <span class="tag">Google Certified</span>
         </div>
 <p class="hero-bio">
-  Computer Science Engineer &amp; Google-Certified Data Analytics professional with <strong>7+ years</strong> of  dedicated experience architecting scalable data pipelines and automating critical workflows across <strong>finance, healthcare, telecom, consumer goods, and e-commerce</strong>. 
+  Computer Science Engineer &amp; Google-Certified Data Analytics professional with <strong>7+ years</strong> of dedicated experience architecting scalable data pipelines and automating critical workflows across <strong>finance, healthcare, telecom, consumer goods, and e-commerce</strong>. 
   Specialized in transforming high-volume, complex datasets into high-performance infrastructure and production-ready automation using Python (Pandas, NumPy, Plotly) and Oracle PL/SQL. 
   Expert in driving regulatory compliance, algorithmic data quality, and strategic business intelligence across multi-cloud environments (SQL Server, BigQuery, Pentaho, Power BI, DOMO).
 </p>
@@ -424,6 +424,10 @@
           <a href="https://github.com/Franklinyura" target="_blank" rel="noopener" class="btn btn-outline">
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
+          </a>
+          <a href="https://platform.stratascratch.com/user/Franklinyura" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg viewBox="0 0 40 40" style="width:16px;height:16px;fill:currentColor;stroke:none;"><path d="M25.4,26.5c-2.3,1.9-5.4,3.1-8.8,3.1c-6,0-11-4.2-12.2-9.8c2.1,1.1,4.5,1.7,7,1.7c4.6,0,8.7-2.1,11.5-5.5 c2.3-1.9,5.4-3.1,8.8-3.1c6,0,11,4.2,12.2,9.8c-2.1-1.1-4.5-1.7-7-1.7C32.3,21,28.2,23.1,25.4,26.5z"/></svg>
+            SQL Problems
           </a>
           <a href="#" onclick="openLangModal(event)" class="btn btn-outline">
             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -443,7 +447,6 @@
 
   <div class="sep"></div>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-inner">
       <div class="sec-label">Experience</div>
@@ -557,7 +560,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
       <div class="sec-label">Skills &amp; Technologies</div>
@@ -603,7 +605,6 @@
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-inner">
       <div class="sec-label">Licenses &amp; Certifications</div>
@@ -681,7 +682,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education">
     <div class="section-inner">
       <div class="sec-label">Education</div>
@@ -701,7 +701,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
       <div class="contact-inner">
@@ -722,10 +721,7 @@
     <span>Data Analyst &amp; BI Professional · Santo Domingo, DR</span>
   </footer>
 
-</div><!-- /main -->
-
-<!-- ── LANGUAGE MODAL ── -->
-<div id="lang-modal" role="dialog" aria-modal="true" aria-label="Select CV language">
+</div><div id="lang-modal" role="dialog" aria-modal="true" aria-label="Select CV language">
   <div class="lang-modal-box">
     <div class="lang-modal-title">Download CV</div>
     <div class="lang-modal-sub">Select your preferred language</div>
